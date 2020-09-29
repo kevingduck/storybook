@@ -1,36 +1,36 @@
 import React from 'react';
 
-import { Form } from './Form';
+import { ProgressIndicator } from './progressindicator';
 
 export default {
-  title: 'Example/Form',
-  component: Form,
+  title: 'Controls/Progress Indicator',
+  component: ProgressIndicator,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 };
 
-const Template = (args) => <Form {...args} />;
+const Template = (args) => <ProgressIndicator {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Form',
+  label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Form',
+  label: 'Button',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  // size: 'large',
-  label: 'Form',
+  size: 'large',
+  label: 'Button',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  // size: 'small',
-  label: 'Form',
+  size: 'small',
+  label: 'Button',
 };

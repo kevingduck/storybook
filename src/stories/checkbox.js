@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import './button.css';
+import './checkbox.css';
 
 /**
  * Primary UI component for user interaction
  */
-export const Form = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-form--primary' : 'storybook-form--secondary';
+export const Checkbox = ({ primary, backgroundColor, size, label, ...props }) => {
+  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <form
+    <button
+      type="button"
+      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
       {label}
-      <input type="text" name="name" />
-    </form>
+    </button>
   );
 };
 
-Form.propTypes = {
+Checkbox.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
@@ -27,12 +28,12 @@ Form.propTypes = {
    * What background color to use
    */
   backgroundColor: PropTypes.string,
-//   /**
-//    * How large should the button be?
-//    */
-//   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
-   * Form contents
+   * How large should the button be?
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Button contents
    */
   label: PropTypes.string.isRequired,
   /**
@@ -41,7 +42,7 @@ Form.propTypes = {
   onClick: PropTypes.func,
 };
 
-Form.defaultProps = {
+Checkbox.defaultProps = {
   backgroundColor: null,
   primary: false,
   size: 'medium',

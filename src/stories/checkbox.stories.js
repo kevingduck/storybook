@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Button } from './Button';
+import { Checkbox } from './checkbox';
 
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Controls/Checkbox',
+  component: Checkbox,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <Checkbox {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
